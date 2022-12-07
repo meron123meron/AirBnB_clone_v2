@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A module which defines a class to manage file storage for hbnb clone"""
+"""This module defines a class to manage file storage for hbnb clone"""
 import json
 
 
@@ -9,7 +9,7 @@ class FileStorage:
     __objects = {}
 
     def all(self, cls=None):
-        """returns the list of objects of one type of class"""
+        """returns the list of objects of one type of class."""
         if cls is None:
             return FileStorage.__objects
         return {k: v for k, v in FileStorage.__objects.items()
@@ -29,7 +29,7 @@ class FileStorage:
             json.dump(temp, f)
 
     def delete(self, obj=None):
-        """to delete obj from __objects"""
+        """delete obj from __objects"""
         if not obj:
             return
         key = "{}.{}".format(type(obj).__name__, obj.id)
@@ -55,10 +55,6 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r') as f:
                 temp = json.load(f)
                 for key, val in temp.items():
-                    self.all()[key] = classes[val['__class__']](**val)
+                        self.all()[key] = classes[val['__class__']](**val)
         except FileNotFoundError:
             pass
-
-    def close(self):
-        """Close for JSON"""
-        self.reload()
