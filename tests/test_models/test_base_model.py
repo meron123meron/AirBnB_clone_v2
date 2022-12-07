@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+"""test_base_model"""
 from models.base_model import BaseModel
 import unittest
 import datetime
@@ -9,16 +9,16 @@ import os
 
 
 class test_basemodel(unittest.TestCase):
-    """ """
+    """a class"""
 
     def __init__(self, *args, **kwargs):
-        """ """
+        """initialization"""
         super().__init__(*args, **kwargs)
         self.name = 'BaseModel'
         self.value = BaseModel
 
     def setUp(self):
-        """ """
+        """a function"""
         pass
 
     def tearDown(self):
@@ -48,7 +48,7 @@ class test_basemodel(unittest.TestCase):
             new = BaseModel(**copy)
 
     def test_save(self):
-        """ Testing save """
+        """ a function testing save"""
         i = self.value()
         i.save()
         key = self.name + "." + i.id
