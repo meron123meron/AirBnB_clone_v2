@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+[[I#!/usr/bin/python3
 """ Place Module for HBNB project """
 from models.base_model import BaseModel, Base
 from models.amenity import Amenity
@@ -9,7 +9,7 @@ from sqlalchemy import Column, Integer, Float, String, ForeignKey, Table
 
 
 if models.is_type == "db":
-    relationship_table = Table('place_amenity', Base.metadata,
+    place_table = Table('place_amenity', Base.metadata,
                                Column('place_id', String(60),
                                       ForeignKey('places.id'),
                                       nullable=False),
