@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# Fabfile to create and distribute an archive to a web server.
+# Fabric script creates and distributes an archive to your web servers, using
+# the function deploy
 import os.path
 from datetime import datetime
 from fabric.api import env
@@ -7,18 +8,18 @@ from fabric.api import local
 from fabric.api import put
 from fabric.api import run
 
-env.hosts = ["34.138.6.145", "104.196.191.134"]
+env.hosts = ["54.242.115.138", "54.167.151.136"]
 
 
 def do_pack():
     """Create a tar gzipped archive of the directory web_static."""
-    dt = datetime.utcnow()
-    file = "versions/web_static_{}{}{}{}{}{}.tgz".format(dt.year,
-                                                         dt.month,
-                                                         dt.day,
-                                                         dt.hour,
-                                                         dt.minute,
-                                                         dt.second)
+    time = datetime.utcnow()
+    file = "versions/web_static_{}{}{}{}{}{}.tgz".format(time.year,
+                                                         time.month,
+                                                         time.day,
+                                                         time.hour,
+                                                         time.minute,
+                                                         time.second)
     if os.path.isdir("versions") is False:
         if local("mkdir -p versions").failed is True:
             return None
