@@ -1,5 +1,4 @@
-# Configures a web server for deployment of web_static.
-
+# AirBnB clone web server setup and configuration
 # Nginx configuration file
 $nginx_conf = "server {
     listen 80 default_server;
@@ -48,7 +47,7 @@ file { '/data/web_static/shared':
 
 file { '/data/web_static/releases/test/index.html':
   ensure  => 'present',
-  content => "Holberton School Puppet\n"
+  content => "Hello world\n"
 } ->
 
 file { '/data/web_static/current':
@@ -70,7 +69,7 @@ file { '/var/www/html':
 
 file { '/var/www/html/index.html':
   ensure  => 'present',
-  content => "Holberton School Nginx\n"
+  content => "Hello world Nginx\n"
 } ->
 
 file { '/var/www/html/404.html':

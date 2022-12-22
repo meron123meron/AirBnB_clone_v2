@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-# Fabfile to delete out-of-date archives.
+# Fabric script deletes out-of-date archives, using the function do_clean
 import os
 from fabric.api import *
 
-env.hosts = ["104.196.168.90", "35.196.46.172"]
+env.hosts = ["54.242.115.138", "54.167.151.136"]
 
 
 def do_clean(number=0):
