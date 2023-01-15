@@ -28,8 +28,8 @@ def c_text(text):
     return "C {}".format(text.replace('_', ' '))
 
 
-@app.route('/python/<text>', strict_slashes=False)
-@app.route('/python', defaults={'text': 'is cool'})
+@app.route('/python', strict_slashes=False)
+@app.route('/python/<text>', defaults={'text': 'is cool'})
 def python_text(text):
     """displays a text after python"""
     return "Python {}".format(text.replace('_', ' '))
