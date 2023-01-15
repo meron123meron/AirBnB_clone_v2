@@ -28,5 +28,12 @@ def c_text(text):
     return "C {}".format(text.replace('_', ' '))
 
 
+@app.route('/python/<text>', strict_slashes=False)
+@app.route('/python', defaults={'text': 'is cool'})
+def python_text(text):
+    """displays a text after python"""
+    return "Python {}".format(text.replace('_', ' '))
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000")
