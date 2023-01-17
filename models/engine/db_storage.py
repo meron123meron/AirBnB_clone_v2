@@ -81,6 +81,6 @@ class DBStorage:
 
     def close(self):
         """
-        database storage.py
+        closes the engine
         """
         self.__session.close()
